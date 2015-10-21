@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface OrderedListVC : UIViewController
 
+-(NSArray *)mostFrequentWordsFromString:(NSString *)text maxCount:(NSUInteger )maxCount;
 
 @end
 

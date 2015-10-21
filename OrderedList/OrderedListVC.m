@@ -6,14 +6,14 @@
 //  Copyright © 2015 Evernote. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "OrderedListVC.h"
 
-@interface ViewController ()
+@interface OrderedListVC ()
 
 @property NSString *text;
 @end
 
-@implementation ViewController
+@implementation OrderedListVC
 
 /*ASSUMPTIONS:
 
@@ -33,7 +33,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    self.text = @"Katniss Everdeen, who tells her story in the first person, wakes up. It is the day of the reaping. She sees her little sister, Prim (short for Primrose), asleep in bed with their mother across the room. Katniss puts on her clothes to go hunting. The area where she and her family live is called the Seam, and it’s part of District 12. They are at the edge of the district, which is enclosed by a high fence, and Katniss often crawls under the fence and enters the woods outside, where she forages and hunts. Her father taught her these skills before his death in a mine explosion when she was eleven years old, and she uses a bow he made. Though trespassing in the woods and poaching are illegal, nobody pays attention, and Katniss even sells meat to the Peacekeepers who are supposed to enforce the laws. Most people in the district, she explains, don’t have enough food.";
+    self.text = @"Katniss Everdeen, who tells her story in the first person, wakes up. It is the day of the reaping. She sees her little sister, Prim (short for Primrose), asleep in bed with their mother across the room. Katniss puts on her clothes to go hunting. The area where she and her family live is called the Seam, and it’s part of District 12. They are at the edge of the district, which is enclosed by a high fence, and Katniss often crawls under the fence and enters the woods outside, where she forages and hunts. Her father taught her these skills before his death in a mine explosion when she was eleven years old, and she uses a bow he made. Though trespassing in the woods and poaching are illegal, nobody pays attention, and Katniss even sells meat to the Peacekeepers who are supposed to enforce the laws. Most people in the district, she explains, don’t have enough food.She meets her friend Gale in the woods. They discuss running away, but both are the caretakers of their families. They catch some fish, then stop by the district’s black market, called the Hob, to trade for bread and salt. They go to the mayor’s house to sell strawberries they collected and talk to the mayor’s daughter, Madge, whom Katniss is friendly with at school. Madge is dressed for the reaping in case she’s chosen, and Gale becomes angry because of the injustice of the reaping process. Katniss explains that, at age twelve, your name is entered into the drawing once; at thirteen, it’s entered twice; and so on up until age eighteen. But you can choose to have your name entered again in exchange for a tessera, a year’s supply of grain and oil for one person. Poor people often need tesserae to survive, so the children of the poor end up having their names entered numerous times. Katniss, who is sixteen, will have her name in twenty times, and Gale, who is eighteen, will have his in forty-two times. Katniss’s sister, Prim, is only twelve and has taken no tesserae, so her name is only in once. Katniss returns home, and after she gets ready, goes with her mother and Prim to the town square. That’s where the reaping, which is televised and treated like a festive event, takes place in their district.";
+
+
 
 
 
@@ -77,7 +79,7 @@
  6. Sort by keys by thier Values. Will use keysSortedByValueUsingComparator: Definition:  Returns an array of the dictionary’s keys, in the order they would be in if the dictionary were sorted by its values using a given comparator block. 
     Assumption: O(n) might be better, but couldt not find information about it's running time :/ 
   
-O(n) + O(n) + O(n) + (O(n)+ O(1)) + O(1) + O(n) => O(5n) + O(2) => O(n) 
+O(n) + O(n) + O(n) + (O(n)+ O(1)) + O(1) + O(n) => O(5n) + O(2) => O(n)
 
 
 
@@ -124,6 +126,8 @@ O(n) + O(n) + O(n) + (O(n)+ O(1)) + O(1) + O(n) => O(5n) + O(2) => O(n)
         //remove any empty strings
         [wordsDictionary removeObjectForKey:@""];
 
+        NSLog(@"%@",wordsDictionary);
+
         //We want to sort the list of words based on their values (frequencies). Additionally we want to reverse the order so highest frequency is first.
 
         sortedList = [[[wordsDictionary keysSortedByValueUsingComparator:^NSComparisonResult(id obj1, id obj2) {
@@ -134,7 +138,7 @@ O(n) + O(n) + O(n) + (O(n)+ O(1)) + O(1) + O(n) => O(5n) + O(2) => O(n)
     
     //We only want to return the number of items based on the maxCount.
     
-    return [sortedList subarrayWithRange:NSMakeRange(0, maxCount-1)];
+    return [sortedList subarrayWithRange:NSMakeRange(0, maxCount)];
 }
 
 
