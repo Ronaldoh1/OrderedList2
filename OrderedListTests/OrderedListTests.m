@@ -55,6 +55,13 @@
 
 
 }
+-(void)testMediumInputFile{
+
+    //retrieve the file from our source folder.
+    
+
+
+}
 
 - (void)testExample {
     // This is an example of a functional test case.
