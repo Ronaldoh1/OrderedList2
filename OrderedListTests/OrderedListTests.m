@@ -30,7 +30,7 @@
 }
 -(void)testEmptyStringForMostFrequentWordsFromString{
 
-    XCTAssertThrows([self.vcToTest mostFrequentWordsFromString:@"" maxCount:2]);
+    XCTAssertNil([self.vcToTest mostFrequentWordsFromString:@"" maxCount:2]);
 
 
 }
@@ -54,18 +54,6 @@
     XCTAssertEqualObjects(@"the", (NSString *)testArray.firstObject);
 
 
-}
--(void)testMediumInputFile{
-
-    //retrieve the file from our source folder.
-    
-
-
-}
-
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
 
 - (void)testPerformanceExample {
